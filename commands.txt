@@ -1,0 +1,7 @@
+Kali RDP user credentials:
+username: tdh
+password: Aa123456
+
+sudo iptables -t mangle -F
+sudo iptables -t mangle -L -n -v
+sudo iptables -t mangle -A PREROUTING -p icmp --icmp-type echo-request  -j NFQUEUE -s 192.168.168.1 --queue-num 1
